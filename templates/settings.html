@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h2>Settings: Вася Пупкин</h2>
+        </div>
+    </div>
+    <div class="row mt-5 mx-4">
+        <div class="col-2">
+            <label for="login_input" class="form-label">Login</label>
+        </div>
+        <div class="col-8">
+            <input type="text" id="login_input" class="form-control" value="Vasya cool">
+        </div>
+    </div>
+    <div class="row mt-5 mx-4">
+        <div class="col-2">
+            <label for="email_input" class="form-label">Email</label>
+        </div>
+        <div class="col-8">
+            <input type="email" id="email_input" class="form-control" value="aboba@mail.ru">
+        </div>
+    </div>
+    <div class="row mt-5 mx-4">
+        <div class="col-2">
+            <label for="nickname_input" class="form-label">Nickname</label>
+        </div>
+        <div class="col-8">
+            <input type="text" id="nickname_input" class="form-control" value="Вася Пупкин">
+        </div>
+    </div>
+    <div class="row mt-5 mx-4">
+        <div class="col-2">
+            <label for="">Upload avatar</label>
+        </div>
+        <div class="col-8">
+            <img src="{% static 'img/user.svg' %}" alt="avatar" width="120" height="120">
+            <input type="file" class="form-control my-3">
+        </div>
+    </div>
+    <div class="row mt-4 mx-4">
+        <div class="col-2"></div>
+        <div class="col-3">
+            <form action="/">
+                <button class="form-control bnt btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

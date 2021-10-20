@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col"><h2>Log in</h2></div>
+    </div>
+    <div class="row mt-5 mx-4">
+        <div class="col-2">
+            <label for="login_input" class="form-label">Login</label>
+        </div>
+        <div class="col-8">
+            <input type="text" id="login_input" class="form-control">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2">
+            <label for="password_input" class="form-label">Password</label>
+        </div>
+        <div class="col-8">
+            <input type="password" id="password_input" class="form-control">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2"></div>
+        <div class="col-5">
+            <div class="input-group">
+                <button class="form-control btn btn-primary">Login</button>
+                <p class="mx-3 my-2">OR</p>
+                <button class="form-control btn btn-secondary">Register</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

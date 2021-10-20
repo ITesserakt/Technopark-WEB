@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col"><h2>New question</h2></div>
+    </div>
+    <div class="row mt-5 mx-4">
+        <div class="col-2">
+            <label for="title_input" class="form-label">Title</label>
+        </div>
+        <div class="col-8">
+            <input type="text" id="title_input" class="form-control" placeholder="Theme of your question">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2">
+            <label for="text_input" class="form-label">Text</label>
+        </div>
+        <div class="col-8">
+            <textarea type="text" id="text_input" class="form-control" rows=10
+                      placeholder="Place your question here"></textarea>
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2">
+            <label for="tags_input" class="form-label">Tags</label>
+        </div>
+        <div class="col-8">
+            <input type="text" id="tags_input" class="form-control" placeholder="E.g. bootstrap, c++, json">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2"></div>
+        <div class="col-3">
+            <form action="/question">
+                <button class="form-control btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

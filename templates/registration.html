@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h2>Registration</h2>
+        </div>
+    </div>
+    <div class="row mt-5 mx-4">
+        <div class="col-2">
+            <label for="login_input" class="form-label">Login</label>
+        </div>
+        <div class="col-8">
+            <input type="text" id="login_input" class="form-control">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2">
+            <label for="email_input" class="form-label">Email</label>
+        </div>
+        <div class="col-8">
+            <input type="email" class="form-control" id="email_input">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2">
+            <label for="nick_input" class="form-label">Nickname</label>
+        </div>
+        <div class="col-8">
+            <input type="text" class="form-control" id="nick_input">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2">
+            <label for="password_input" class="form-label">Password</label>
+        </div>
+        <div class="col-8">
+            <input type="password" class="form-control" id="password_input">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2 text-nowrap">
+            <label for="pass_repeat_input" class="form-label">Repeat password</label>
+        </div>
+        <div class="col-8">
+            <input type="password" class="form-control" id="pass_repeat_input">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2">
+            <label for="avatar_input" class="form-label">Upload avatar</label>
+        </div>
+        <div class="col-8">
+            <input type="file" class="form-control" id="avatar_input">
+        </div>
+    </div>
+    <div class="row my-3 mx-4">
+        <div class="col-2"></div>
+        <div class="col-3">
+            <form action="/">
+                <button class="form-control btn btn-primary" href="/">Register</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

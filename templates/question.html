@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row my-4 me-5">
+        <div class="col py-2 ms-3">
+            <img src="{% static 'img/user.svg' %}" alt="avatar" width="100" height="100">
+            <div class="d-flex align-items-center">
+                <p class="answer-stars ms-2 me-3 my-3">0</p>
+                <div class="d-block">
+                    <div class="row">
+                        <div class="col">
+                            <a href="">
+                                <img src="{% static 'img/arrow-up.png' %}" alt="Up" width="20" height="20">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <a href="">
+                                <img src="{% static 'img/arrow-down.png' %}" alt="Down" width="20" height="20">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 py-3">
+            <h4>How to build a moon park?</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto commodi dolores
+                eveniet
+                excepturi facilis illum ipsa maxime minus mollitia, neque nesciunt non quas quod quos saepe
+                vero!
+                Assumenda, cupiditate!</p>
+            <div class="row">
+                <div class="col d-flex">
+                    <p class="me-2">Tags: </p>
+                    <a href="/tag" class="me-2">black-jack</a>
+                    <a href="/tag" class="me-2">black-jack</a>
+                </div>
+            </div>
+        </div>
+        <hr/>
+    </div>
+    {% for answer in answers %}
+        <div class="row my-4 me-5">
+            <div class="col-auto py-2 ms-3 me-3">
+                <img src="{% static 'img/user.svg' %}" alt="avatar" width="60" height="60">
+                <div class="d-flex align-items-center">
+                    <p class="answer-stars ms-2 me-3 my-3">0</p>
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col">
+                                <a href="">
+                                    <img src="{% static 'img/arrow-up.png' %}" alt="Up" width="20" height="20">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <a href="">
+                                    <img src="{% static 'img/arrow-down.png' %}" alt="Down" width="20" height="20">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col py-3">
+                <h4>How to build a moon park?</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto commodi dolores
+                    eveniet
+                    excepturi facilis illum ipsa maxime minus mollitia, neque nesciunt non quas quod quos saepe
+                    vero!
+                    Assumenda, cupiditate!</p>
+                <div class="row d-flex">
+                    <div class="col">
+                        <input type="checkbox" class="form-check-input me-3 {% if not is_author %}d-none{% endif %}"
+                               id="correct-{{ answer }}" {% if answer.checked_correct %} checked {% endif %}>
+                        <label for="correct-{{ answer }}"
+                               class="form-check-label {% if not answer.checked_correct %} d-none {% endif %}">
+                            <i>Author checked this answer correct</i>
+                        </label>
+                        <label for="correct-{{ answer }}"
+                               class="form-check-label {% if answer.checked_correct or not is_author %} d-none {% endif %}">
+                            <i>Mark this answer correct</i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+        </div>
+    {% endfor %}
+    {% if answers|length > 20 %}
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="">Back</a></li>
+            <li class="page-item"><a class="page-link" href="">1</a></li>
+            <li class="page-item"><a class="page-link" href="">2</a></li>
+            <li class="page-item"><a class="page-link" href="">3</a></li>
+            <li class="page-item"><a class="page-link" href="">Next</a></li>
+        </ul>
+    {% endif %}
+    <div class="row my-5 me-5">
+        <div class="col">
+            <textarea placeholder="Place your answer here" class="form-control" rows="5"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button class="btn btn-primary form-control">Answer</button>
+        </div>
+    </div>
+{% endblock %}
