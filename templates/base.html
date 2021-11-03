@@ -26,16 +26,16 @@
                 </div>
                 <div class="col-4"></div>
                 <div class="col-1 pe-4">
-                    <form action="/ask">
+                    <form action="{% url 'ask' %}">
                         <button class="btn btn-primary form-control">Ask!</button>
                     </form>
                 </div>
                 <div class="col-2 justify-content-end {% if authorized %} d-none {% endif %}">
                     <div class="input-group">
                         <div class="row">
-                            <div class="col"><a href="/login">Log in</a></div>
+                            <div class="col"><a href="{% url 'login' %}">Log in</a></div>
                             <div class="col">
-                                <a href="/register">Register</a>
+                                <a href="{% url 'register' %}">Register</a>
                             </div>
                         </div>
                     </div>
@@ -48,9 +48,9 @@
                         </div>
                         <div class="row flex-nowrap text-nowrap">
                             <div class="col">
-                                <a href="/settings">Settings</a>
+                                <a href="{% url 'settings' %}">Settings</a>
                             </div>
-                            <div class="col"><a href="/">Log out</a></div>
+                            <div class="col"><a href="{% url 'index' %}">Log out</a></div>
                         </div>
                     </div>
                 </div>
