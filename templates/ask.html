@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/font-utils.css' %}">
+{% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col"><h2>New question</h2></div>
     </div>
     <div class="row mt-5 mx-4">
+        <div class="col">
+            <h5 class="font-red">Please fill up all fields to proceed</h5>
+        </div>
+    </div>
+    <div class="row mt-3 mx-4">
         <div class="col-2">
             <label for="title_input" class="form-label">Title</label>
         </div>
